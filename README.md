@@ -48,4 +48,4 @@ You're now flying with Phalcon. Great things are about to happen!
 
 This page is located at views/index/index.phtml
 
-But I have some errors that I not know exactly where they came.
+# But I have some errors that I not know exactly where they came.
