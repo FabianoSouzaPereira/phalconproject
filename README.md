@@ -3,8 +3,8 @@
 # This project was fixed, because phalcon-devtools had created it with some errors. 
 # First of all a public/index.pfp was created with the following error:
 #
-   $application = new \Phalcon\Mvc\Application($di);
-   echo $application->handle($_SERVER['REQUEST_URI'])->getContent();
+    $application = new \Phalcon\Mvc\Application($di);
+    echo $application->handle($_SERVER['REQUEST_URI'])->getContent();
 
 # Have solution to alter echo for following text:
 
