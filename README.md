@@ -7,9 +7,10 @@
     echo $application->handle($_SERVER['REQUEST_URI'])->getContent();
 
 ## Have solution to alter echo for following text:
-
+ 
     $application = new \Phalcon\Mvc\Application($di);
     echo $application->handle($_GET['_url'] ?? '/')->getContent();
+   
 #
 ## Second adjust
 ## app/config/config.php
