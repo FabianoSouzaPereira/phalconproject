@@ -29,7 +29,7 @@
  ## Have solution with following adjusts:
  
       'application' => [
-       'appDir'         => APP_PATH . '/myprojectname/',
+       //'appDir'         => APP_PATH . '/',
         'controllersDir' => APP_PATH . '/controllers/',
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
