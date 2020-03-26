@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 use Phalcon\Di\FactoryDefault;
+use Phalcon\Mvc\View;
+use Phalcon\Mvc\View\Engine\Volt;
 
 error_reporting(E_ALL);
 
@@ -41,6 +43,7 @@ try {
     $application = new \Phalcon\Mvc\Application($di);
 
     echo $application->handle($_GET['_url'] ?? '/')->getContent();
+    
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';
     echo '<pre>' . $e->getTraceAsString() . '</pre>';
