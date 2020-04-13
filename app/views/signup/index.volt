@@ -1,7 +1,8 @@
-{{'<h2>Cadastre um Login</h2>'}}
+<div class="body">
+<div class="cadastro">
 
-<?php echo $this->tag->form("signup/register"); ?>
-
+<?php echo $this->tag->form(["signup/register",'class' => 'formcad']); ?>
+{{'<h1>Cadastre um Login</h1>'}}
     <p>
         <label for="name">Nome</label>
         <?php echo $this->tag->textField("username"); ?>
@@ -15,7 +16,9 @@
         <?php echo $this->tag->textField("userpassword"); ?>
     </p>
     <p>
-        <?php echo $this->tag->submitButton("Register"); ?>
+        <?php echo $this->tag->submitButton(["Registrar",'class'=> 'btn btn-primary btncad']); ?>
     </p>
 
 </form>
+</div>
+<div>

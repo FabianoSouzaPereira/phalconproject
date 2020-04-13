@@ -1,6 +1,6 @@
 {{'<h2>Atualize seu Cadastro de Login</h2>'}}
 
-<?php echo $this->tag->form("signup/register"); ?>
+<?php echo $this->tag->form("sign/update"); ?>
 
     <p>
         <label for="name">Nome</label>
@@ -15,7 +15,7 @@
         <?php echo $this->tag->textField("userpassword"); ?>
     </p>
     <p>
-        <?php echo $this->tag->submitButton("Register"); ?>
+        <?php echo $this->tag->submitButton("Atualiza"); ?>
     </p>
 
 </form>

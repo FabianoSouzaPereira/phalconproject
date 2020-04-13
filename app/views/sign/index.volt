@@ -1,7 +1,6 @@
-{{'<h2>Faça o login com e-mail e senha</h2>'}}
-
-<?php echo $this->tag->form("sign/login"); ?>
-
+<div class="login">
+<?php echo $this->tag->form(["sign/login",'class' => 'formlogin']); ?>
+<?php  echo "<h1>Faça o seu Login</h1>"; ?>
     <p>
         <label for="email">E-Mail</label>
         <?php echo $this->tag->textField("useremail"); ?>
@@ -10,8 +9,9 @@
         <label for="password">Senha</label>
         <?php echo $this->tag->textField("userpassword"); ?>
     </p>
-    <p>
-        <?php echo $this->tag->submitButton("Login"); ?>
+    <p class="pLogin">
+        <?php echo $this->tag->submitButton(["Login",'class' => 'btn btnlogin btnstyle']);?>
     </p>
-
+<?php echo $this->tag->linkTo(["/signup/", "Registrar", 'class' => 'btn btnRegistrar btnstyle']); ?>
 </form>
+</div>
