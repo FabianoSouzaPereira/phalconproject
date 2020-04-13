@@ -7,12 +7,15 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-                
+        
         if($_SESSION['login'] != true){
             header('Location: sign');
             exit();
         }
+
     }
+    
+    
 
 }
 

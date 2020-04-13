@@ -42,13 +42,13 @@ class SignupController extends ControllerBase
                    $vlr= $key = $value;
         
                    if ($vlr->getField() == 'username'){ 
-                       $nome= "<h2>Preencha o campo nome corretamente.<h2/>"; 
+                       $nome= "<p class='pparam'>Preencha o campo nome corretamente.</p>"; 
                    };
                    if ($vlr->getField()  == 'useremail'){ 
-                       $email= "<h2>Preencha o campo email corretamente.<h2/>"; 
+                       $email= "<p class='pparam'>Preencha o campo email corretamente.</p>"; 
                    };
                    if ($vlr->getField()  == 'userpassword'){ 
-                       $senha= "<h2>Preencha o campo senha corretamente.<h2/>"; 
+                       $senha= "<p class='pparam'>Preencha o campo senha corretamente.</p>"; 
                    };
               
                 }
@@ -58,13 +58,13 @@ class SignupController extends ControllerBase
                             . "<h2>Desculpe, ocorreu os seguintes problemas:<h2/>"
                             . $nome . $email .  $senha 
                        . "</div>"
-                            . "<p>". $this->tag->linkTo(['/signup/', 'voltar', 'class' => 'btn btnvoltar btnstyle']) . "</p>"
+                            . "<p id='palert'>". $this->tag->linkTo(['/signup/', 'voltar', 'class' => 'btn btnvoltar btnstyle']) . "</p>"
                    . "</div>";
             }
         
         // passing a message to the view
-            $this->view->message = print $message;
-        $this->view->disable();
+            $this->view->message = print Phalcon\Tag::stylesheetLink("css/cadStyle.css") . $message;
+            $this->view->disable();
     }
 
 }
