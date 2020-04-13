@@ -1,0 +1,68 @@
+body{
+	width: 100% !important;
+	margin-top:0px;
+	background-color: #d8d8d8; 
+}
+
+.cadastro{
+	background-color: #c2caef; 
+	width: 40%;
+	height: 20%;
+	margin: 8% 25% 15% 25%;
+}
+
+.formcad{
+	margin: 0%;
+	width:100%;
+	padding: 5%;
+	box-shadow: 1px 3px 10px rgba(0,0,0,.9);
+	background: #b4e391; /* Old browsers */
+	background: -moz-linear-gradient(top,  #b4e391 0%, #61c419 5%, #61c419 92%, #b4e391 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #b4e391 0%,#61c419 5%,#61c419 92%,#b4e391 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #b4e391 0%,#61c419 5%,#61c419 92%,#b4e391 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */
+	
+}
+
+.formcad:hover{
+	box-shadow: inset 0 0 1em rgba(76,168,79), 0 0 1em rgba(68,98,53);
+}
+
+.formcad input[type='text']{
+	width:70%;
+	background-color: #e2e2e2;
+}
+.formcad h1{
+	padding-bottom: 5%;
+	font-size: 2em;
+	color: #ffffff;
+}
+
+.formcad p {
+	font-size: 18px;
+	color: #ffffff;
+}
+
+.btncad {
+	margin: 0% 40% 0% 40%;
+	background-color: #005ebb;
+	color: #ffffff;
+}
+
+.alert02{
+	background-color: #008000 !important;
+	margin:10% auto 0% auto !important;
+	padding: 1px;
+	width: 60%;
+}
+
+.alert02 .btnvoltar{
+	margin: 5% auto 5% 40% !important;
+	background-color: #004080;
+	height:25px !important;
+	font-size: 1.4em;
+	color: #ffffff;
+	padding: 1px;
+	width:100px;
+	height: 40px !important;
+}
