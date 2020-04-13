@@ -10,19 +10,28 @@ $router->add(
     ]
 );
 
+
 $router->add(
     '/app/controller/signup',
     [
-        'controller' => 'sign',
+        'controller' => 'signup',
         'action'     => 'index',
     ]
 );
 
 $router->add(
+    '/app/controller/signup',
+    [
+        'controller' => 'signup',
+        'action'     => 'register',
+    ]
+    );
+
+$router->add(
     'app/controller/sign',
     [
         'controller' => 'sign',
-        'action'     => 'login',
+        'action'     => 'index',
     ]
 );
 
@@ -36,3 +45,4 @@ $router->add(
 
 
 $router->handle($_SERVER['REQUEST_URI']);
+
