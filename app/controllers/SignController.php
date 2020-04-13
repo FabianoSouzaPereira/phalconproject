@@ -1,13 +1,21 @@
 <?php
 declare(strict_types=1);
 use Phalcon\Db\Column;
+use Phalcon\Http\Request;
 
 class SignController extends ControllerBase
 {
     public $iduser=0;
+    public $email=null;
+    public $name=null;
+    
     public function indexAction()
     {
-        
+        if($_SESSION['login']== true){
+            header('Location: index');
+            exit();
+        }
+
     }
     
     public function updateAction()
@@ -25,14 +33,14 @@ class SignController extends ControllerBase
         $this->view->success = $success;
         
         if ($success) {
-        echo    $message = "Obrigado por Registrar";
+           $message = "<div>Obrigado por atualizar o Registrar</div>";
         } else {
-         echo   $message = "Desculpe, ocorreu os seguintes problemas: <br>"
+           $message = "Desculpe, ocorreu os seguintes problemas: <br>"
                 . implode('<br>', $user->getMessages());
         }
         
         // passing a message to the view
-        $this->view->message = $message;
+        $this->view->message = print $message;
  
     }
 
@@ -40,41 +48,43 @@ class SignController extends ControllerBase
     {
         $users = new Users();
 
-         $users::find(
-            [
-                "useremail = useremail AND userpassword = userpassword",
-                'order' => 'useremail',
-                'limit' => 100,
-            ]
-        );
-            foreach ($users as $user) {
-                echo $user['useremail']; "\n";
-            }
-     
-/*
-    // Bind parameters
-    $parameters = [
-        'useremail' => 'useremail',
-        'userpassword' => 'userpassword',
-    ];
+        //assign value from the form to $user
+        $users->assign(
+            $this->request->getPost(null,(['null','username','useremail','userpassword'])));
+            $users::findFirst(
+                [
+                    'username' => 'username',
+                    'useremail' => 'useremail',
+                    'userpassword' => 'userpassword'
+                ]
+            );          
+          
+            foreach ( $users as $user) {
+                if(isset($user['username']) && isset($user['usermail'])){
+                    $name=$user['username'];
+                    $email=$user['useremail'];
+                }
+              }
+                
+        if(isset($email)){
+            $_SESSION['login']=true;
+            $_SESSION['name']= $name;    
+            $message = "Bem vindo ". $name .".";
+        }
+        else
+        {
 
-    // Casting Types
-    $types = [
-        'useremail' => Column::BIND_PARAM_STR,
-        'userpassword' => Column::BIND_PARAM_INT,
-    ];
-
-    
-         $users::find(
-            [
-                "useremail = :useremail: AND userpassword = :userpassword:",
-                'bind'      => $parameters,
-                'bindTypes' => $types,
-            ]
-        );
-            foreach ($users as $user) {
-                echo $users->useremail, "\n";
-            }
-   */  
+            $message = "<div class='alert01'>"
+                             . "<div class='alert alert-danger fade show margem' role='alert'> "
+                                 . "<h2>Seu usuário ou senha estão incorretos. <br>" . "Tente de novo ! </h2>"
+                             . "</div>"
+                                 . "<p id='palert'>Verifique seu usuário e senha antes de tentar outra vez.</p>"
+                                 . "<p>". $this->tag->linkTo(['/sign/', 'voltar', 'class' => 'btn btnvoltar btnstyle']) . "</p>"
+                           . "<div>";
+        }
+        // passing a message to the view
+        $this->view->message = print $message;
     }
+    
 }
+
