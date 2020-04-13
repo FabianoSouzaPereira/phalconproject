@@ -1,5 +1,6 @@
  phalconproject
- 
+
+##  This app was made with PHP7.4.3 and Phalcon 4.01.
 ### This project was fixed, because phalcon-devtools had created it with some errors. 
 ### First of all a public/index.pfp was created with the following error:
 #
