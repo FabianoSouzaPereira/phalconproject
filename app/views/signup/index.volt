@@ -1,3 +1,4 @@
+{{ stylesheet_link("public/css/cabStyle.css") }}
 <div class="body">
 <div class="cadastro">
 
@@ -16,7 +17,8 @@
         <?php echo $this->tag->textField("userpassword"); ?>
     </p>
     <p>
-        <?php echo $this->tag->submitButton(["Registrar",'class'=> 'btn btn-primary btncad']); ?>
+        <?php echo $this->tag->submitButton(["Registrar",'class'=> 'btn btn-primary btnstyle btncad']); ?>
+        <?php echo $this->tag->linkTo(["/sign/", "Cancelar", 'class' => 'btn btnCancelar btnstyle']); ?>
     </p>
 
 </form>

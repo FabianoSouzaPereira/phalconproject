@@ -1,3 +1,4 @@
+{{ stylesheet_link("public/css/style.css") }}
 <div class="login">
 <?php echo $this->tag->form(["sign/login",'class' => 'formlogin']); ?>
 <?php  echo "<h1>Faça o seu Login</h1>"; ?>
